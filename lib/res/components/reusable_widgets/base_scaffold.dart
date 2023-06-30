@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ttd_flutter_app/res/components/colors/colors.dart';
 import 'package:ttd_flutter_app/res/components/images/image_strings.dart';
 
