@@ -5,20 +5,25 @@ class DashboardTextfield extends StatelessWidget {
       {super.key,
       required this.title,
       required this.subtitle,
-      required this.image, this.routeName});
+      required this.image,
+      this.routeName,
+      this.backgroundColor});
   final String title;
   final String subtitle;
   final String image;
   final String? routeName;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-       
+        if (routeName != null) {
+          Navigator.pushNamed(context, routeName!);
+        }
       },
       child: Padding(
-        padding: const EdgeInsets.only( left: 10, right: 10),
+        padding: const EdgeInsets.only(left: 10, right: 10),
         child: Card(
           // margin: EdgeInsets.all(15.0),
           shape: RoundedRectangleBorder(
@@ -33,10 +38,10 @@ class DashboardTextfield extends StatelessWidget {
           child: ListTile(
             leading: CircleAvatar(
               radius: 25,
-              backgroundColor: Colors.green[900],
+              backgroundColor: backgroundColor,
               child: CircleAvatar(
                 radius: 23,
-                backgroundColor: Colors.green[900],
+                backgroundColor: backgroundColor,
                 child: Image.asset(
                   image,
                   width: 30,
@@ -48,11 +53,17 @@ class DashboardTextfield extends StatelessWidget {
             ),
             title: Text(
               title,
-              style: TextStyle(color: Colors.green[900], fontSize: 15),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold),
             ),
             subtitle: Text(
               subtitle,
-              style: TextStyle(color: Colors.green[900], fontSize: 15),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12,
+                  ),
             ),
           ),
         ),

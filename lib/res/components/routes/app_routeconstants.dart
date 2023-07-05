@@ -6,5 +6,8 @@ class AppRouteConstants {
   static const String OTPView = "/OTPView";
   static const String DashboardView = "/DashboardView";
   static const String  GenerateMPin= "/GenerateMPin";
+  static const String PersonalDetails= "/PersonalDetails";
+  static const String BankDetails= "/BankDetails";
+  static const String AddressDetails= "/AddressDetails";
  
 }

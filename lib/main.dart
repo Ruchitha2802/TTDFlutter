@@ -17,9 +17,11 @@ class MyApp extends StatelessWidget {
       routes: AppPages.routes,
       debugShowCheckedModeBanner: false,
       title: 'TTD Pensioners',
+      
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
         useMaterial3: true,
+      
       ),
       //  home:DashboardView(),
 

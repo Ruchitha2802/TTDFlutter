@@ -11,4 +11,10 @@ class ImageStrings {
   static const digital_certificate = 'assets/communications.png';
   static const pension_deatils = 'assets/nominations.png';
   static const pension_period = 'assets/tax_deductions.png';
+  static const sidebar = 'assets/sidebar.png';
+  static const dashboard = 'assets/dashboard.png';
+  static const privacy_policy = 'assets/privacy.png';
+  static const app_info = 'assets/info.png';
+  static const exit = 'assets/exit.png';
+  static const logout = 'assets/logout.png';
 }
