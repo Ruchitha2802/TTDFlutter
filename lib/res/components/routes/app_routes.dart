@@ -7,6 +7,7 @@ import 'package:ttd_flutter_app/view/login/generate_mpin.dart';
 import 'package:ttd_flutter_app/view/login/loginview.dart';
 import 'package:ttd_flutter_app/view/login/otpview.dart';
 import 'package:ttd_flutter_app/view/personal_deatils/personal_deatils.dart';
+import '../../../view/login/validate_mpin.dart';
 
 class AppPages {
   static Map<String, WidgetBuilder> get routes {
@@ -18,9 +19,8 @@ class AppPages {
       AppRouteConstants.PersonalDetails: ((context) => PersonalDetails()),
       AppRouteConstants.BankDetails: ((context) => BankDeatils()),
       AppRouteConstants.AddressDetails: ((context) => AddressDetails()),
-
-    
-    };
+       AppRouteConstants.ValidateMpin: ((context) => Validate_Mpin()),
+};
   }
 }
 /* final GoRouter _routes = GoRouter(

@@ -18,11 +18,18 @@ class EnglishStrings {
   static const String Mobile_no = "Mobile No";
   static const String ppo_no = "PPO No";
   // static const String ="Login";
+  //validateMpin
+  static const String notyou = "Not You";
+  static const String forgotmpin = "Forgot MPIN";
+  static const String vali_login = "Login";
+  //GenerateMpin
+  static const String gen_proceed = "Proceed";
   //Request texts
   static const String ppo_request = "Enter PPO No";
   static const String mobile_request = "Enter Mobile No";
   static const String otp_request = "Send OTP";
   static const String otp_validate = "Validate";
+  
   static const String otp_resend = "Resend OTP";
 
   //side bar

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ttd_flutter_app/res/components/reusable_widgets/base_scaffold.dart';
-import 'package:ttd_flutter_app/res/components/reusable_widgets/login_text_field.dart';
 import 'package:ttd_flutter_app/res/components/reusable_widgets/noneditable_text.dart';
 
 class PersonalDetails extends StatefulWidget {

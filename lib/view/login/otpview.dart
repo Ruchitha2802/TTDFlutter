@@ -60,8 +60,8 @@ class _OTPViewState extends State<OTPView> {
                           color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.bold)),
-                  Text("Sent OTP to your Mobile number"),
-                  Text("Enter OTP"),
+                  Text(""),
+                  Text("Generate 4 Digit Mpin"),
                   Form(
                     key: formKey,
                     child: Padding(
@@ -150,7 +150,7 @@ class _OTPViewState extends State<OTPView> {
                 
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, AppRouteConstants.DashboardView);
+                        Navigator.pushNamed(context, AppRouteConstants.GenerateMPin);
                       },
                       child: Text(
                         EnglishStrings.otp_validate,
