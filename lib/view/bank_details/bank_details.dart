@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ttd_flutter_app/res/appStrings/english_strings.dart';
+import 'package:ttd_flutter_app/res/components/colors/colors.dart';
 import 'package:ttd_flutter_app/res/components/reusable_widgets/base_scaffold.dart';
 import 'package:ttd_flutter_app/res/components/reusable_widgets/noneditable_text.dart';
 
@@ -9,6 +10,8 @@ class BankDeatils extends StatefulWidget {
   @override
   State<BankDeatils> createState() => _BankDeatilsState();
 }
+
+bool update = false;
 
 class _BankDeatilsState extends State<BankDeatils> {
   @override
@@ -96,16 +99,79 @@ class _BankDeatilsState extends State<BankDeatils> {
                   height: 20,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      update = !update;
+                    });
+                  },
+                
                   child: Text(
                     EnglishStrings.update_information,
                     style: TextStyle(fontSize: 16),
                   ),
                   style: ElevatedButton.styleFrom(
-                  
                     minimumSize: Size(150, 50),
                   ),
+                  
                 ),
+                update
+                    ? Column(
+                        children: [
+                          ListTile(
+                            title: Text(
+                              "Supporting Document",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            trailing: Icon(
+                              Icons.check_circle_outline,
+                              color: Colors.green,
+                            ),
+                          ),
+                          ListTile(
+                            leading: Text(
+                              "Support Doc \n Description",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16),
+                            ),
+                            title: TextField(
+                              decoration: InputDecoration(
+                                hintText: 'Enter Description',
+                                border: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors
+                                        .blue, // Set your desired color here
+                                    width: 2.0, // Set your desired width here
+                                  ),
+                                ),
+                              ),
+                            ),
+                            trailing: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "View",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        AppColors.dash_bg),
+                                shape:
+                                    MaterialStateProperty.all<OutlinedBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        8.0), // Adjust the radius as needed
+                                  ),
+                                ),
+                                minimumSize: MaterialStateProperty.all<Size>(
+                                    Size(50, 50)),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : SizedBox()
                 //Container with yes no radio buttons
               ],
             )));
