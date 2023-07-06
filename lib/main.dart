@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: AppRouteConstants.LoginView,
+      initialRoute: AppRouteConstants.intial,
       routes: AppPages.routes,
       debugShowCheckedModeBanner: false,
       title: 'TTD Pensioners',
