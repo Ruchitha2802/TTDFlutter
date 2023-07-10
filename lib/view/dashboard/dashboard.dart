@@ -89,12 +89,14 @@ class _DashboardViewState extends State<DashboardView> {
                 subtitle: TeluguStrings.Pay_Slip,
                 image: ImageStrings.payslip,
                 backgroundColor: AppColors.blue,
+                routeName: AppRouteConstants.PaySlip,
               ),
               DashboardTextfield(
                 title: EnglishStrings.Digital_certificate,
                 subtitle: TeluguStrings.Digital_certificate,
                 image: ImageStrings.digital_certificate,
                 backgroundColor: AppColors.green,
+                routeName: AppRouteConstants.DigitalLifeCertificate,
               ),
               DashboardTextfield(
                 title: EnglishStrings.Pension_Details,

@@ -10,4 +10,8 @@ class AppRouteConstants {
   static const String BankDetails = "/BankDetails";
   static const String AddressDetails = "/AddressDetails";
   static const String ValidateMpin = "/Validate_Mpin";
+  static const String PrivacyPolicy = "/PrivacyPolicy";
+  static const String AppInfo = "/AppInfo";
+  static const String PaySlip = "/PaySlip";
+  static const String DigitalLifeCertificate = "/DigitalLifeCertificate";
 }

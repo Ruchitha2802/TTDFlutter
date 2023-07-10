@@ -4,12 +4,13 @@ class AppColors {
   static const Color dash_bg = Color(0xFF873F0B);
   static const Color bg_color = Color(0xFFE8F0FE);
 
-
+  static const Color Button_red_color = Color.fromARGB(255, 189, 36, 25);
+  static const Color Button_green_color = Color.fromARGB(255, 55, 138, 58);
   static const Color blue = Colors.blue;
   static const Color green = Colors.green;
   static const Color pink = Colors.pink;
   static const Color purple = Color.fromARGB(255, 119, 59, 175);
-   static const Color amber = Colors.amber;
+  static const Color amber = Colors.amber;
   /* <color name="purple_200">#337ab7</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="royal_blue">#4169e1</color>

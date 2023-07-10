@@ -1,5 +1,10 @@
 class EnglishStrings {
   const EnglishStrings._();
+  static const String yes = "Yes";
+  static const String no = "No";
+  static const String ok = "OK";
+  static const String exit_question = "Do you want to exit from the app?";
+  static const String logout_question = "Do you want to logout?";
   static const String Personal_Information = "Personal Information";
   static const String Payroll_service = "Payroll services";
   static const String Personal_Details = "Personal Details";
@@ -46,8 +51,7 @@ class EnglishStrings {
   static const String city = "City";
   static const String bank_country = "Bank Country";
   static const String is_joint_acc = "Is Joint Account";
-  static const String yes = "Yes";
-  static const String no = "No";
+  
   static const String update_information = "UPDATE INFORMATION";
 
   //address details
@@ -63,4 +67,8 @@ class EnglishStrings {
   static const String near_railway = "Nearest Railway Station";
   static const String near_airport = "Nearest Airport";
   static const String contact_no = "Contact No";
+  //
+  static const String  privacy_policy = "PRIVACY \n POLICY";
+  static const String  terms_and_conditions = "TERMS AND \n CONDITIONS";
+  static const String  copy_right = "COPYRIGHT \n POLICY";
 }

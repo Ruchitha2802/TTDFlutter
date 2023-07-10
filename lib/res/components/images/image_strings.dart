@@ -17,4 +17,9 @@ class ImageStrings {
   static const app_info = 'assets/info.png';
   static const exit = 'assets/exit.png';
   static const logout = 'assets/logout.png';
+
+  static const String alert_right = "assets/correct.png";
+  static const String alert_cross = "assets/closeBgicon.png";
+  static const String alert_warning = "assets/warning.png";
+  static const String alert_warning_yellow = "assets/warning_yellow.png";
 }

@@ -1,3 +1,5 @@
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:ttd_flutter_app/res/appStrings/english_strings.dart';
 import 'package:ttd_flutter_app/res/components/colors/colors.dart';
@@ -13,7 +15,22 @@ class BankDeatils extends StatefulWidget {
 
 bool update = false;
 
+
 class _BankDeatilsState extends State<BankDeatils> {
+/*   Future<void> _pickPDF() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['pdf'],
+    );
+
+    if (result != null && result.files.isNotEmpty) {
+      final filePath = result.files.first.path;
+      if (filePath != null) {
+        //_selectedFile = File(filePath);
+      }
+    }
+    setState(() {}); // Trigger a rebuild to update the UI
+  } */
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
@@ -104,7 +121,6 @@ class _BankDeatilsState extends State<BankDeatils> {
                       update = !update;
                     });
                   },
-                
                   child: Text(
                     EnglishStrings.update_information,
                     style: TextStyle(fontSize: 16),
@@ -112,7 +128,6 @@ class _BankDeatilsState extends State<BankDeatils> {
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(150, 50),
                   ),
-                  
                 ),
                 update
                     ? Column(
@@ -146,9 +161,16 @@ class _BankDeatilsState extends State<BankDeatils> {
                               ),
                             ),
                             trailing: TextButton(
-                              onPressed: () {},
+                              onPressed: () async {
+                                String? filePath = await pickFile();
+                                if (filePath != null) {
+                                  // Handle the selected file
+                                  print('Selected file: $filePath');
+                                  // Implement your upload logic here
+                                }
+                              },
                               child: Text(
-                                "View",
+                                "Upload",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -175,5 +197,20 @@ class _BankDeatilsState extends State<BankDeatils> {
                 //Container with yes no radio buttons
               ],
             )));
+  }
+
+  Future<String?> pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['pdf', 'doc', 'docx'],
+    );
+
+    if (result != null) {
+      PlatformFile file = result.files.first;
+      return file.path;
+    } else {
+      // User canceled the picker
+      return null;
+    }
   }
 }

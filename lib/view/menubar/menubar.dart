@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ttd_flutter_app/res/appStrings/english_strings.dart';
 import 'package:ttd_flutter_app/res/components/colors/colors.dart';
+import 'package:ttd_flutter_app/res/components/custom_alerts/double_button_alert.dart';
 import 'package:ttd_flutter_app/res/components/images/image_strings.dart';
+import 'package:ttd_flutter_app/res/components/routes/app_routeconstants.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -37,10 +42,12 @@ class _SideBarState extends State<SideBar> {
                 ),
                 title: const Text(
                   EnglishStrings.dashboard,
-                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
-                  print("hello");
+                  Navigator.of(context).pop();
+                  // Navigator.of(context).pop();
                 },
               ),
               ListTile(
@@ -52,10 +59,12 @@ class _SideBarState extends State<SideBar> {
                 ),
                 title: const Text(
                   EnglishStrings.Privacy_Policy,
-                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
-                  print("hello");
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, AppRouteConstants.PrivacyPolicy);
                 },
               ),
               ListTile(
@@ -67,10 +76,12 @@ class _SideBarState extends State<SideBar> {
                 ),
                 title: const Text(
                   EnglishStrings.App_Info,
-                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
-                  print("hello");
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, AppRouteConstants.AppInfo);
                 },
               ),
               ListTile(
@@ -82,9 +93,34 @@ class _SideBarState extends State<SideBar> {
                 ),
                 title: const Text(
                   EnglishStrings.Exit,
-                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
+                  showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return DoubleButtonAlert(
+                        Buttontext1: EnglishStrings.yes,
+                        Buttontext2: EnglishStrings.no,
+                        descriptions: EnglishStrings.exit_question,
+                        img: ImageStrings.alert_warning,
+                        onButton1Pressed: () {
+                          if (Platform.isAndroid) {
+                            SystemNavigator.pop();
+                          } else if (Platform.isIOS) {
+                            exit(0);
+                          }
+                        },
+                        onButton2Pressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        title: EnglishStrings.app_name,
+                        version: '',
+                      );
+                    },
+                  );
                   print("hello");
                 },
               ),
@@ -97,10 +133,30 @@ class _SideBarState extends State<SideBar> {
                 ),
                 title: const Text(
                   EnglishStrings.Logout,
-                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
-                  print("hello");
+                  showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return DoubleButtonAlert(
+                        Buttontext1: EnglishStrings.yes,
+                        Buttontext2: EnglishStrings.no,
+                        descriptions: EnglishStrings.logout_question,
+                        img: ImageStrings.alert_warning,
+                        onButton1Pressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        onButton2Pressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        title: EnglishStrings.app_name,
+                        version: '',
+                      );
+                    },
+                  );
                 },
               ),
             ],
