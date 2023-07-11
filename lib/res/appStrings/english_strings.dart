@@ -3,6 +3,7 @@ class EnglishStrings {
   static const String yes = "Yes";
   static const String no = "No";
   static const String ok = "OK";
+  static const String InterNet_check = "Please check your Internet connection";
   static const String exit_question = "Do you want to exit from the app?";
   static const String logout_question = "Do you want to logout?";
   static const String Personal_Information = "Personal Information";

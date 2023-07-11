@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ttd_flutter_app/res/components/routes/app_routeconstants.dart';
 import 'package:ttd_flutter_app/res/components/routes/app_routes.dart';
+
+import 'view_model/personal_deatils_viewmodel/personaldeatils_viewmodel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,20 +15,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: AppRouteConstants.intial,
-      routes: AppPages.routes,
-      debugShowCheckedModeBanner: false,
-      title: 'TTD Pensioners',
-      
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
-        useMaterial3: true,
-      
-      ),
-      //  home:DashboardView(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => PersonalDeatilsViewModel()),
+      ],
+      child: MaterialApp(
+        initialRoute: AppRouteConstants.intial,
+        routes: AppPages.routes,
+        debugShowCheckedModeBanner: false,
+        title: 'TTD Pensioners',
 
-      //const MyHomePage(title: 'Flutter Demo Home Page'),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
+          useMaterial3: true,
+        ),
+        //  home:DashboardView(),
+
+        //const MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
     );
   }
 }
